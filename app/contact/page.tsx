@@ -44,14 +44,11 @@ export default function ContactPage() {
             </div>
           </Link>
 
-          <nav className="space-y-4 text-sm tracking-[0.25em] uppercase text-neutral-400">
+          <nav className="space-y-4 text-2xl tracking-[0.25em] uppercase text-neutral-400">
             <Link href="/" className="block hover:text-white transition-colors">
               About
             </Link>
             <button className="block hover:text-white transition-colors">Video</button>
-            <button className="block hover:text-white transition-colors">Design</button>
-            <button className="block hover:text-white transition-colors">Photo</button>
-            <button className="block hover:text-white transition-colors">Blog</button>
           </nav>
         </div>
 

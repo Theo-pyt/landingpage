@@ -121,12 +121,9 @@ export default function Page() {
             </div>
           </Link>
 
-          <nav className="space-y-4 text-sm tracking-[0.25em] uppercase text-neutral-400">
+          <nav className="space-y-4 text-2xl tracking-[0.25em] uppercase text-neutral-400">
             <button className="block hover:text-white transition-colors">About</button>
             <button className="block hover:text-white transition-colors">Video</button>
-            <button className="block hover:text-white transition-colors">Design</button>
-            <button className="block hover:text-white transition-colors">Photo</button>
-            <button className="block hover:text-white transition-colors">Blog</button>
           </nav>
         </div>
 
