@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({ 
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['400', '500'],
-  style: ['normal'],
-})
-
-const inter = Inter({ 
-  subsets: ['latin'],
-  display: 'swap',
-})
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "vibedev.ai",
@@ -65,7 +59,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/images/idevibelogo.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${inter.className} bg-black bg-dotted-grid`}>{children}</body>
+      <body className={`${bebas.className} bg-black bg-dotted-grid`}>{children}</body>
     </html>
   );
 }
