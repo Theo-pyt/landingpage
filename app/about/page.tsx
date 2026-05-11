@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Bebas_Neue } from 'next/font/google'
 import { Sidebar } from '@/components/Sidebar'
 
@@ -24,10 +25,13 @@ export default function AboutPage() {
 
           <div className="w-full max-w-xs mx-auto mb-10">
             <div className="aspect-[3/4] w-full overflow-hidden rounded-sm border border-black/12 bg-gradient-to-br from-[#3a3a3e] via-[#2d2d32] to-[#1a1a1e] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-              <img
+              <Image
                 src="/headshot_noBG.png"
                 alt="Theodor Pintilie"
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 320px"
+                priority
               />
             </div>
           </div>

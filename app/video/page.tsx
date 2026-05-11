@@ -50,7 +50,7 @@ export default function VideoPage() {
             Videos
           </h2>
           <p className="text-neutral-400 mb-12 max-w-2xl">
-            Here's some examples of my work from the last couple of years.
+            Here&apos;s some examples of my work from the last couple of years.
           </p>
 
           <div className="space-y-16">
