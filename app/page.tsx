@@ -110,9 +110,11 @@ export default function Page() {
                 Allow your business to be seen in tomorrow&apos;s digital world.
               </p>
 
-              <Button className="rounded-none bg-transparent border border-red-500 text-red-400 hover:bg-red-500 hover:text-white text-xs tracking-[0.25em] uppercase px-8 py-5">
-                Learn More
-              </Button>
+              <Link href="/about">
+                <Button className="rounded-none bg-transparent border border-red-500 text-red-400 hover:bg-red-500 hover:text-white text-xs tracking-[0.25em] uppercase px-8 py-5">
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -122,52 +124,9 @@ export default function Page() {
           <div className="max-w-5xl mx-auto py-20 px-8">
             <div className="max-w-3xl">
               <p className={`text-xl leading-relaxed text-neutral-900 ${bebas.className}`}>
-                From animated corporate social graphics to cinematic wedding films, check out some
-                of the engaging content I&apos;ve created throughout the years.
+                From hero videos to corporate interviews check out some of the engaging content
+                I&apos;ve created throughout the years.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Block 2 – black with imagery */}
-        <section className="bg-black text-white">
-          <div className="max-w-5xl mx-auto py-20 px-8">
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-black h-64 md:h-96 relative overflow-hidden">
-                <img
-                  src="/reel-1.jpg"
-                  alt="Portrait still"
-                  className="w-full h-full object-cover opacity-80"
-                />
-              </div>
-              <div className="bg-black h-64 md:h-96 relative overflow-hidden md:col-span-2">
-                <img
-                  src="/reel-2.jpg"
-                  alt="Camera operator at work"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="bg-black h-40 md:h-48 overflow-hidden">
-                <img
-                  src="/reel-3.jpg"
-                  alt="On-site filming"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="bg-black h-40 md:h-48 overflow-hidden">
-                <img
-                  src="/reel-4.jpg"
-                  alt="Outdoor production"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="bg-black h-40 md:h-48 overflow-hidden">
-                <img
-                  src="/reel-5.jpg"
-                  alt="Additional production still"
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </div>
           </div>
         </section>
