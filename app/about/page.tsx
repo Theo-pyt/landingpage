@@ -24,7 +24,7 @@ export default function AboutPage() {
           </h2>
 
           <div className="w-full max-w-xs mx-auto mb-10">
-            <div className="aspect-[3/4] w-full overflow-hidden rounded-sm border border-black/12 bg-gradient-to-br from-[#3a3a3e] via-[#2d2d32] to-[#1a1a1e] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm border border-black/12 bg-gradient-to-br from-[#3a3a3e] via-[#2d2d32] to-[#1a1a1e] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
               <Image
                 src="/headshot_noBG.png"
                 alt="Theodor Pintilie"
