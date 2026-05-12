@@ -10,7 +10,7 @@ const bebas = Bebas_Neue({
 
 export const metadata: Metadata = {
   title: "Theo.video",
-  description: "",
+  description: "Theodor's portfolio of work as a videographer.",
   icons: {
     icon: [
       {
