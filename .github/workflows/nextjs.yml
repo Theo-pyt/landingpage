@@ -73,6 +73,14 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Auto-fix vulnerable npm deps
+        if: ${{ steps.detect-package-manager.outputs.manager == 'npm' }}
+        run: |
+          npm audit fix --package-lock-only
+          npm install
+      - name: Fail on remaining high/critical CVEs
+        if: ${{ steps.detect-package-manager.outputs.manager == 'npm' }}
+        run: npm audit --audit-level=high
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
