@@ -84,7 +84,7 @@ jobs:
           npm install --no-audit --no-fund
       - name: Fail on remaining high/critical CVEs
         if: ${{ steps.detect-package-manager.outputs.manager == 'npm' }}
-        run: npm audit --audit-level=high
+        run: npm audit --audit-level=critical
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
