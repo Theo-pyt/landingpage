@@ -35,14 +35,6 @@ const projects: Project[] = [
     title: 'Video five',
     embedUrl: 'https://www.youtube.com/embed/FIOSRBP6KU0',
   },
-  {
-    title: 'Video six',
-    embedUrl: 'https://vimeo.com/427018096?fl=ip&fe=ec',
-  },
-  {
-    title: 'Video seven',
-    embedUrl: 'https://vimeo.com/252904783?fl=ip&fe=ec',
-  },
 ]
 
 export default function VideoPage() {
