@@ -1,0 +1,83 @@
+'use client'
+
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Bebas_Neue } from 'next/font/google'
+
+const bebas = Bebas_Neue({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+})
+
+type ActivePage = 'home' | 'about' | 'video' | 'contact'
+
+type SidebarProps = {
+  active: ActivePage
+}
+
+export function Sidebar({ active }: SidebarProps) {
+  const navLink = (page: 'about' | 'video') =>
+    `block hover:text-white transition-colors ${
+      active === page ? 'text-white' : 'text-neutral-400'
+    }`
+
+  return (
+    <aside className="w-full shrink-0 bg-black border-b lg:border-b-0 lg:border-r border-neutral-900 flex flex-col justify-between gap-6 lg:gap-0 py-4 px-4 sm:py-6 sm:px-6 lg:py-10 lg:px-[clamp(1.5rem,3vw,2.5rem)] z-40 sticky top-0 lg:fixed lg:left-0 lg:top-0 lg:w-sidebar lg:h-[100dvh] lg:max-h-[100dvh]">
+      <div className="flex flex-col sm:flex-row lg:flex-col sm:items-start sm:justify-between lg:justify-start gap-6 lg:space-y-10 lg:gap-0">
+        <Link href="/" className="block cursor-pointer select-none shrink-0">
+          <div>
+            <div
+              className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-500 flex items-center justify-center mb-3 sm:mb-4"
+              aria-hidden="true"
+            >
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
+                viewBox="0 0 24 24"
+                fill="white"
+                aria-hidden="true"
+              >
+                <path d="M7 4v16l13-8z" />
+              </svg>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[0.65rem] sm:text-xs tracking-[0.3em] text-neutral-400 uppercase">
+                Portfolio of
+              </p>
+              <h1
+                className={`text-fluid-display font-extrabold tracking-[0.12em] ${bebas.className}`}
+              >
+                THEODOR
+                <br />
+                PINTILIE
+              </h1>
+            </div>
+          </div>
+        </Link>
+
+        <nav className="flex flex-row flex-wrap gap-x-6 gap-y-2 sm:gap-x-8 lg:flex-col lg:space-y-4 text-lg sm:text-xl lg:text-2xl tracking-[0.25em] uppercase">
+          <Link href="/about" className={navLink('about')}>
+            About
+          </Link>
+          <Link href="/video" className={navLink('video')}>
+            Videos
+          </Link>
+        </nav>
+      </div>
+
+      <div className="w-full sm:max-w-xs lg:max-w-none">
+        <Link href="/contact">
+          <Button
+            className={`w-full rounded-none text-xs tracking-[0.25em] uppercase py-3 sm:py-4 ${
+              active === 'contact'
+                ? 'bg-red-600 ring-2 ring-red-400'
+                : 'bg-red-500 hover:bg-red-600'
+            }`}
+          >
+            Contact
+          </Button>
+        </Link>
+      </div>
+    </aside>
+  )
+}
