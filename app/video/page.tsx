@@ -16,24 +16,32 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: 'Project one',
+    title: 'Video one',
     embedUrl: 'https://www.youtube.com/embed/1NZ1nq3c8SQ',
   },
   {
-    title: 'Project two',
+    title: 'Video two',
     embedUrl: 'https://www.youtube.com/embed/xs0_O80IDv0',
   },
   {
-    title: 'Project three',
+    title: 'Video three',
     embedUrl: 'https://www.youtube.com/embed/AG8vhK1v4c0',
   },
   {
-    title: 'Project four',
+    title: 'Video four',
     embedUrl: 'https://www.youtube.com/embed/nT7-m3syVvE',
   },
   {
-    title: 'Project five',
+    title: 'Video five',
     embedUrl: 'https://www.youtube.com/embed/FIOSRBP6KU0',
+  },
+  {
+    title: 'Video six',
+    embedUrl: 'https://vimeo.com/427018096?fl=ip&fe=ec',
+  },
+  {
+    title: 'Video seven',
+    embedUrl: 'https://vimeo.com/252904783?fl=ip&fe=ec',
   },
 ]
 
