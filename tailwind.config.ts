@@ -65,6 +65,11 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+  			'deep-blue': {
+  				DEFAULT: '#0a1628',
+  				light: '#0f2040',
+  				dark: '#060e1a',
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

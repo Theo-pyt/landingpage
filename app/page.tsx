@@ -56,16 +56,16 @@ export default function Page() {
   }, []);
 
   return (
-    <PageLayout active="home">
+    <PageLayout active="home" layoutClassName="bg-deep-blue">
       <style jsx global>{`
         .hero-bg {
           position: relative;
           background-image:
             linear-gradient(
               to right,
-              rgba(0, 0, 0, 0.95),
-              rgba(0, 0, 0, 0.75),
-              rgba(0, 0, 0, 0.85)
+              rgba(10, 22, 40, 0.95),
+              rgba(10, 22, 40, 0.75),
+              rgba(10, 22, 40, 0.85)
             ),
             url('/hero.jpg');
           background-size: cover;
@@ -129,7 +129,7 @@ export default function Page() {
         </section>
 
         {/* Block 3 – full-width contact CTA */}
-        <section className="bg-black text-white flex justify-center w-full">
+        <section className="bg-deep-blue text-white flex justify-center w-full">
           <div className="w-full max-w-content mx-auto py-section-y px-section-x sm:px-8 flex flex-col items-center text-center lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)]">
             <h3
               className={`text-fluid-2xl font-semibold mb-8 sm:mb-10 tracking-tight ${bebas.className}`}

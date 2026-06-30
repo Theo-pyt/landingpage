@@ -14,16 +14,31 @@ type ActivePage = 'home' | 'about' | 'video' | 'contact'
 
 type SidebarProps = {
   active: ActivePage
+  variant?: 'dark' | 'light'
 }
 
-export function Sidebar({ active }: SidebarProps) {
+export function Sidebar({ active, variant = 'dark' }: SidebarProps) {
+  const isLight = variant === 'light'
+
   const navLink = (page: 'about' | 'video') =>
-    `block hover:text-white transition-colors ${
-      active === page ? 'text-white' : 'text-neutral-400'
+    `block transition-colors ${
+      isLight
+        ? active === page
+          ? 'text-neutral-900'
+          : 'text-neutral-500 hover:text-neutral-900'
+        : active === page
+          ? 'text-white'
+          : 'text-neutral-400 hover:text-white'
     }`
 
   return (
-    <aside className="w-full shrink-0 bg-black border-b lg:border-b-0 lg:border-r border-neutral-900 flex flex-col justify-between gap-6 lg:gap-0 py-4 px-4 sm:py-6 sm:px-6 lg:py-10 lg:px-[clamp(1.5rem,3vw,2.5rem)] z-40 sticky top-0 lg:fixed lg:left-0 lg:top-0 lg:w-sidebar lg:h-[100dvh] lg:max-h-[100dvh]">
+    <aside
+      className={`w-full shrink-0 flex flex-col justify-between gap-6 lg:gap-0 py-4 px-4 sm:py-6 sm:px-6 lg:py-10 lg:px-[clamp(1.5rem,3vw,2.5rem)] z-40 sticky top-0 lg:fixed lg:left-0 lg:top-0 lg:w-sidebar lg:h-[100dvh] lg:max-h-[100dvh] border-b lg:border-b-0 lg:border-r ${
+        isLight
+          ? 'bg-white border-neutral-200 text-neutral-900'
+          : 'bg-deep-blue-dark border-deep-blue-light/25'
+      }`}
+    >
       <div className="flex flex-col sm:flex-row lg:flex-col sm:items-start sm:justify-between lg:justify-start gap-6 lg:space-y-10 lg:gap-0">
         <Link href="/" className="block cursor-pointer select-none shrink-0">
           <div>
@@ -41,7 +56,11 @@ export function Sidebar({ active }: SidebarProps) {
               </svg>
             </div>
             <div className="space-y-1">
-              <p className="text-[0.65rem] sm:text-xs tracking-[0.3em] text-neutral-400 uppercase">
+              <p
+                className={`text-[0.65rem] sm:text-xs tracking-[0.3em] uppercase ${
+                  isLight ? 'text-neutral-500' : 'text-neutral-400'
+                }`}
+              >
                 Portfolio of
               </p>
               <h1
