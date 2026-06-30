@@ -24,7 +24,7 @@ const categories: VideoCategory[] = [
     name: 'Short documentaries',
     videos: [
       {
-        embedUrl: 'https://www.youtube.com/embed/zGAB3ZoI1CU?start=53',
+        embedUrl: 'https://www.youtube.com/embed/zGAB3ZoI1CU',
       },
     ],
   },

@@ -5,6 +5,7 @@ import Image, { type StaticImageData } from 'next/image'
 import { Bebas_Neue } from 'next/font/google'
 import { PageLayout } from '@/components/PageLayout'
 import { PageContent } from '@/components/PageContent'
+import headshotPhoto from '@/headshot/headshot.png'
 import amnestyLogo from '@/logos/Amnesty-International-Logo-Vector.svg--3890860117.png'
 import caribouLogo from '@/logos/Caribou_Logo_Primary_Black.png'
 import hekayyatnaLogo from '@/logos/Hekayyatna English Eye.png'
@@ -85,38 +86,36 @@ export default function AboutPage() {
           About
         </h2>
 
-        <div className="w-full space-y-4 sm:space-y-5">
-          <div className="flex flex-row items-start gap-4 sm:gap-6 md:gap-8 w-full">
-            <div className="shrink-0 w-[min(100%,clamp(11.2rem,36vw,16rem))]">
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm border border-deep-blue-light/25 bg-deep-blue-dark shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-                <Image
-                  src="/headshot_noBG.png"
-                  alt="Theodor Pintilie"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 36vw, 256px"
-                  priority
-                />
-              </div>
-            </div>
-
-            <div className="flex-1 min-w-0 space-y-4 sm:space-y-5 text-neutral-200 leading-relaxed text-fluid-base text-left">
-              <p>
-                I am a videographer and editor focused on stories that connect brands and audiences
-                across social, web, and live events. My work spans corporate pieces, promotional
-                content, and narrative-driven edits—always with a clear message and a polished finish.
-              </p>
-              <p>
-                During my career, I had the opportunity to work for different brands, businesses, and
-                creative teams to produce content that not only looks cinematic, but communicates with
-                purpose. A key part of that journey has been my ongoing collaboration with Hekayyatna,
-                where we&apos;ve successfully delivered multiple video production campaigns across a range of
-                formats and audiences.
-              </p>
+        <div className="w-full space-y-4 sm:space-y-5 text-neutral-200 leading-relaxed text-fluid-base text-left">
+          <div className="float-left w-[min(100%,clamp(11.2rem,36vw,16rem))] mr-4 sm:mr-6 md:mr-8 mb-2">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm border border-deep-blue-light/25 bg-deep-blue-dark shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+              <Image
+                src={headshotPhoto}
+                alt="Theodor Pintilie"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 36vw, 256px"
+                priority
+              />
             </div>
           </div>
 
-          <p className="w-full text-neutral-200 leading-relaxed text-fluid-base text-left">
+          <p>
+            I am a videographer and editor focused on stories that connect brands and audiences
+            across social, web, and live events. My work spans corporate pieces, promotional
+            content, and narrative-driven edits—always with a clear message and a polished finish.
+          </p>
+          <p>
+            During my career, I had the opportunity to work for different brands, businesses, and
+            creative teams to produce content that not only looks cinematic, but communicates with
+            purpose.
+          </p>
+          <p>
+            A key part of that journey has been my ongoing collaboration with Hekayyatna,
+            where we&apos;ve successfully delivered multiple video production campaigns across a range of
+            formats and audiences.
+          </p>
+          <p>
             Whether you need a sharp reel, a full campaign, or a single hero film, I bring technical
             craft, creative direction, and a collaborative approach to ensure your vision reads
             clearly on every screen. I focus on creating content that feels intentional, emotionally
