@@ -12,6 +12,38 @@ const bebas = Bebas_Neue({
   display: 'swap',
 })
 
+function HeroRedDots() {
+  return (
+    <span
+      className="inline-flex flex-col items-center justify-between h-[0.82em] shrink-0"
+      aria-hidden="true"
+    >
+      {[0, 1, 2].map((i) => (
+        <span key={i} className="bg-red-500 w-[0.16em] h-[0.16em] shrink-0" />
+      ))}
+    </span>
+  )
+}
+
+function HeroOrnament() {
+  return (
+    <span className="inline-flex items-center gap-[0.12em] shrink-0">
+      <span className="inline-flex items-center gap-[0.04em]">
+        <span className="text-red-500 leading-none">|</span>
+        <HeroRedDots />
+      </span>
+      <span
+        className="inline-block w-[1.25em] h-[0.65em] border-[0.08em] border-solid border-red-500 box-border shrink-0"
+        aria-hidden="true"
+      />
+      <span className="inline-flex items-center gap-[0.04em]">
+        <HeroRedDots />
+        <span className="text-red-500 leading-none">|</span>
+      </span>
+    </span>
+  )
+}
+
 export default function Page() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -94,20 +126,26 @@ export default function Page() {
         {/* Hero — offset on lg so copy sits at viewport center, not main-column center */}
         <section className="hero-bg min-h-[70vh] sm:min-h-[80vh] lg:min-h-screen flex items-center justify-center w-full">
           <div className="hero-content w-full max-w-2xl mx-auto px-section-x sm:px-8 flex flex-col items-center text-center lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)]">
-            <h2
-              className={`text-fluid-hero font-semibold tracking-tight mb-3 sm:mb-4 ${bebas.className}`}
-            >
-              <span className="text-neutral-100">Videographer</span>
-              <span className="text-red-500">|</span>
-            </h2>
+            <div className="flex justify-center mb-3 sm:mb-4">
+              <div
+                className={`inline-grid grid-cols-[1fr_auto] items-center gap-x-3 text-fluid-hero font-semibold tracking-tight ${bebas.className}`}
+              >
+                <span className="text-neutral-100 text-right">Video Producer</span>
+                <HeroOrnament />
+                <span className="text-neutral-100 text-right">Videographer</span>
+                <HeroOrnament />
+                <span className="text-neutral-100 text-right">Video Editor</span>
+                <HeroOrnament />
+              </div>
+            </div>
 
             <p className="text-fluid-lg text-neutral-200 max-w-xl mb-6 sm:mb-8">
-              Allow your business to be seen in tomorrow&apos;s digital world.
+              Framing the idea. Shooting the shot. Nailing the edit.
             </p>
 
-            <Link href="/about" className="inline-flex justify-center">
+            <Link href="/video/" className="inline-flex justify-center">
               <Button className="rounded-none bg-transparent border border-red-500 text-red-400 hover:bg-red-500 hover:text-white text-xs tracking-[0.25em] uppercase px-6 sm:px-8 py-4 sm:py-5">
-                Learn More
+                Portfolio
               </Button>
             </Link>
           </div>

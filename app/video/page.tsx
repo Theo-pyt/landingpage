@@ -3,6 +3,7 @@
 import { Bebas_Neue } from 'next/font/google'
 import { PageLayout } from '@/components/PageLayout'
 import { PageContent } from '@/components/PageContent'
+import { WorkedWithSection } from '@/components/WorkedWithSection'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -61,7 +62,7 @@ export default function VideoPage() {
           <h2
             className={`text-fluid-title font-semibold mb-3 sm:mb-4 tracking-tight ${bebas.className}`}
           >
-            Videos
+            Portfolio
           </h2>
           <p className="text-fluid-lg text-neutral-400 max-w-[min(100%,48rem)] mx-auto">
             Here&apos;s some examples of my work from the last couple of years.
@@ -99,6 +100,8 @@ export default function VideoPage() {
           ))}
         </div>
       </PageContent>
+
+      <WorkedWithSection />
     </PageLayout>
   )
 }

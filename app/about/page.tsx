@@ -1,15 +1,11 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import Image, { type StaticImageData } from 'next/image'
+import Image from 'next/image'
 import { Bebas_Neue } from 'next/font/google'
 import { PageLayout } from '@/components/PageLayout'
 import { PageContent } from '@/components/PageContent'
+import { WorkedWithSection } from '@/components/WorkedWithSection'
 import headshotPhoto from '@/headshot/headshot.png'
-import amnestyLogo from '@/logos/Amnesty-International-Logo-Vector.svg--3890860117.png'
-import caribouLogo from '@/logos/Caribou_Logo_Primary_Black.png'
-import hekayyatnaLogo from '@/logos/Hekayyatna English Eye.png'
-import striveLogo from '@/logos/strive-2542923558.png'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -17,59 +13,7 @@ const bebas = Bebas_Neue({
   display: 'swap',
 })
 
-const trustedLogos: { src: StaticImageData; alt: string }[] = [
-  { src: amnestyLogo, alt: 'Amnesty International' },
-  { src: caribouLogo, alt: 'Caribou' },
-  { src: hekayyatnaLogo, alt: 'Hekayyatna' },
-  { src: striveLogo, alt: 'Strive' },
-]
-
-function TrustedLogo({ logo, index }: { logo: (typeof trustedLogos)[number]; index: number }) {
-  if (index === trustedLogos.length - 1) {
-    return (
-      <Image
-        src={logo.src}
-        alt="Strive"
-        className="shrink-0 h-20 sm:h-28 w-auto object-contain"
-      />
-    )
-  }
-
-  const sizeClass =
-    index === 0
-      ? 'h-24 sm:h-32'
-      : index === 2
-        ? 'h-[13.5rem] sm:h-[18rem]'
-        : 'h-12 sm:h-16'
-
-  return (
-    <Image
-      src={logo.src}
-      alt={logo.alt}
-      className={`shrink-0 w-auto object-contain ${sizeClass}`}
-    />
-  )
-}
-
 export default function AboutPage() {
-  const logosScrollRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const el = logosScrollRef.current
-    if (!el) return
-
-    const handleWheel = (event: WheelEvent) => {
-      if (el.scrollWidth <= el.clientWidth) return
-      if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return
-
-      event.preventDefault()
-      el.scrollLeft += event.deltaY
-    }
-
-    el.addEventListener('wheel', handleWheel, { passive: false })
-    return () => el.removeEventListener('wheel', handleWheel)
-  }, [])
-
   return (
     <PageLayout
       active="about"
@@ -101,63 +45,40 @@ export default function AboutPage() {
           </div>
 
           <p>
-            I am a videographer and editor focused on stories that connect brands and audiences
-            across social, web, and live events. My work spans corporate pieces, promotional
-            content, and narrative-driven edits—always with a clear message and a polished finish.
+            Curious by nature and always drawn to new experiences, I enjoy travelling, discovering
+            different cuisines, and spending time outdoors. I&apos;m an active person who loves nature and
+            rock climbing, and I&apos;m constantly inspired by film, music, and the arts. Experiencing
+            different places, cultures, and creative perspectives shapes how I see the world and
+            influences the way I approach storytelling.
           </p>
           <p>
-            During my career, I had the opportunity to work for different brands, businesses, and
-            creative teams to produce content that not only looks cinematic, but communicates with
-            purpose.
+            I&apos;m a videographer and editor creating story-driven content that connects brands with
+            audiences across social, digital, and live platforms. I manage the entire production
+            process, from concept development and pre-production planning to filming, editing, colour
+            grading, and final delivery. My work spans corporate films, promotional content, and
+            narrative-led edits, with a focus on clear messaging, thoughtful storytelling, and polished
+            execution.
           </p>
           <p>
-            A key part of that journey has been my ongoing collaboration with Hekayyatna,
-            where we&apos;ve successfully delivered multiple video production campaigns across a range of
-            formats and audiences.
+            Throughout my career, I&apos;ve collaborated with brands, businesses, and creative teams to
+            produce content that is not only visually compelling but purposeful in its communication.
+            Many of these projects have been delivered remotely, working closely with teams and clients
+            across different locations and time zones.
           </p>
           <p>
-            Whether you need a sharp reel, a full campaign, or a single hero film, I bring technical
-            craft, creative direction, and a collaborative approach to ensure your vision reads
-            clearly on every screen. I focus on creating content that feels intentional, emotionally
-            resonant, and tailored to the audience it&apos;s meant to reach.
+            A significant part of that journey has been my ongoing partnership with Hekayyatna, where
+            we&apos;ve delivered multiple video campaigns across a variety of formats and audiences.
+          </p>
+          <p>
+            Whether it&apos;s a short-form reel, a campaign launch, or a hero film, I bring a blend of
+            technical expertise, creative direction, and collaborative thinking to every project. My
+            goal is to create work that feels intentional, resonates with its audience, and
+            communicates effectively on every screen.
           </p>
         </div>
       </PageContent>
 
-      <section className="bg-white text-black w-full pb-section-y">
-        <PageContent
-          narrow
-          className="w-full lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)] pb-4 sm:pb-6"
-        >
-          <h2
-            className={`w-full text-fluid-2xl font-semibold tracking-tight text-neutral-900 text-center ${bebas.className}`}
-          >
-            Trusted by
-          </h2>
-        </PageContent>
-
-        <div
-          ref={logosScrollRef}
-          className="w-full min-w-0 overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide scroll-px-section-x sm:scroll-px-8"
-          style={{ scrollPaddingRight: 'clamp(3rem, 12vw, 8rem)' }}
-          aria-label="Trusted by logos"
-        >
-          <div className="flex flex-row flex-nowrap items-center justify-start gap-10 sm:gap-14 md:gap-16 pl-section-x sm:pl-8 pr-[clamp(4rem,15vw,10rem)] w-max min-w-full py-2">
-            {trustedLogos.map((logo, index) => (
-              <div
-                key={logo.alt}
-                className={`shrink-0 ${
-                  index === 0 ? 'ml-8 sm:ml-10 md:ml-12' : ''
-                } ${index === 1 ? 'ml-4 sm:ml-5 md:ml-6' : ''} ${
-                  index === 2 ? '-ml-10 sm:-ml-14 md:-ml-16' : ''
-                } ${index === 3 ? '-ml-[1.5rem] sm:-ml-[3.5rem] md:-ml-[4.5rem] -translate-y-1 sm:-translate-y-0.5 pr-4 sm:pr-6' : ''}`}
-              >
-                <TrustedLogo logo={logo} index={index} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WorkedWithSection />
     </PageLayout>
   )
 }

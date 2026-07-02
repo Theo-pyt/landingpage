@@ -22,12 +22,12 @@ export default function ContactPage() {
         </h2>
 
         <p className="text-fluid-base text-neutral-700">
-          Want to learn more? You can reach me at{' '}
+          Say hello. You can reach me at{' '}
           <a
             href="mailto:theodor.pint@gmail.com"
             className="text-red-500 hover:text-red-600 underline underline-offset-2"
           >
-            theodor.pint@gmail.com
+            theodor.pint[at]gmail.com
           </a>
         </p>
       </div>

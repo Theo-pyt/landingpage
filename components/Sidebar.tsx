@@ -79,7 +79,7 @@ export function Sidebar({ active, variant = 'dark' }: SidebarProps) {
             About
           </Link>
           <Link href="/video" className={navLink('video')}>
-            Videos
+            Portfolio
           </Link>
         </nav>
       </div>
