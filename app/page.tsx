@@ -19,7 +19,7 @@ function HeroRedDots() {
       aria-hidden="true"
     >
       {[0, 1, 2].map((i) => (
-        <span key={i} className="bg-red-500 w-[0.16em] h-[0.16em] shrink-0" />
+        <span key={i} className="bg-red-500 w-[0.16em] h-[0.16em] rounded-[0.04em] shrink-0" />
       ))}
     </span>
   )

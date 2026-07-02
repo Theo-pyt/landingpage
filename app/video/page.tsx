@@ -4,6 +4,7 @@ import { Bebas_Neue } from 'next/font/google'
 import { PageLayout } from '@/components/PageLayout'
 import { PageContent } from '@/components/PageContent'
 import { WorkedWithSection } from '@/components/WorkedWithSection'
+import { VideoPlaylist, type PlaylistVideo } from '@/components/VideoPlaylist'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -11,9 +12,7 @@ const bebas = Bebas_Neue({
   display: 'swap',
 })
 
-type Video = {
-  embedUrl: string
-}
+type Video = PlaylistVideo
 
 type VideoCategory = {
   name: string
@@ -22,28 +21,78 @@ type VideoCategory = {
 
 const categories: VideoCategory[] = [
   {
+    name: 'Corporate',
+    videos: [
+      {
+        embedUrl: 'https://www.youtube.com/embed/1NZ1nq3c8SQ',
+        title:
+          'Mastercard Strive EU Innovators bringing real-world insights to support small business resilience.',
+      },
+      {
+        embedUrl: 'https://www.youtube.com/embed/xs0_O80IDv0',
+        title: 'Fueling small business growth through digital payment acceptance',
+      },
+      {
+        embedUrl: 'https://www.youtube.com/embed/nT7-m3syVvE',
+        title: 'Unlocking access to finance',
+      },
+      {
+        embedUrl: 'https://www.youtube.com/embed/FIOSRBP6KU0',
+        title: 'How Women in the Dominican Republic Are Turning Skills Into Success',
+      },
+      {
+        embedUrl: 'https://www.youtube.com/embed/_fwtfUQIJDE',
+        title: "SoBanHang is unlocking small businesses' access to credit",
+      },
+    ],
+  },
+  {
+    name: 'Brand Identity',
+    videos: [
+      {
+        embedUrl: 'https://www.youtube.com/embed/Vx8RGX00rtY',
+        title: 'Our Values',
+      },
+      {
+        embedUrl: 'https://www.youtube.com/embed/sKGSVqiMZ-o',
+        title: 'We Are Caribou',
+      },
+    ],
+  },
+  {
     name: 'Short documentaries',
     videos: [
       {
         embedUrl: 'https://www.youtube.com/embed/zGAB3ZoI1CU',
+        title: 'Young West African farmers turn social media into tools for growth',
       },
     ],
   },
   {
-    name: 'Event Recaps',
+    name: 'Summits',
     videos: [
       {
         embedUrl: 'https://www.youtube.com/embed/AG8vhK1v4c0',
+        title:
+          "Discussing the future of Europe's small businesses at the Mastercard Strive EU Summit, Jan 2026.",
       },
     ],
   },
   {
-    name: 'Corporate',
+    name: 'Community events',
     videos: [
-      { embedUrl: 'https://www.youtube.com/embed/1NZ1nq3c8SQ' },
-      { embedUrl: 'https://www.youtube.com/embed/xs0_O80IDv0' },
-      { embedUrl: 'https://www.youtube.com/embed/nT7-m3syVvE' },
-      { embedUrl: 'https://www.youtube.com/embed/FIOSRBP6KU0' },
+      {
+        embedUrl: 'https://www.youtube.com/embed/OywMJv7lqCQ?start=247',
+        title: "Sara Auster: The story behind Sara's sound baths",
+      },
+      {
+        embedUrl: 'https://www.youtube.com/embed/bw4vR63tBls?start=800',
+        title: 'Alexander Taylor: The environmental impact of Design',
+      },
+      {
+        embedUrl: 'https://www.youtube.com/embed/cYTVDxAtqAw?start=1056',
+        title: 'Archie Proudfoot: The importance of symmetry in art',
+      },
     ],
   },
 ]
@@ -65,7 +114,7 @@ export default function VideoPage() {
             Portfolio
           </h2>
           <p className="text-fluid-lg text-neutral-400 max-w-[min(100%,48rem)] mx-auto">
-            Here&apos;s some examples of my work from the last couple of years.
+            Over time, I have worked on:
           </p>
         </header>
 
@@ -78,24 +127,7 @@ export default function VideoPage() {
                 {category.name}
               </h3>
 
-              <div className="space-y-8 sm:space-y-10">
-                {category.videos.map((video, index) => (
-                  <article
-                    key={`${category.name}-${index}`}
-                    className="w-full bg-deep-blue-dark overflow-hidden border border-deep-blue-light/25 rounded-sm"
-                  >
-                    <div className="aspect-video w-full">
-                      <iframe
-                        src={video.embedUrl}
-                        title={`${category.name} video ${index + 1}`}
-                        className="w-full h-full min-h-0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                  </article>
-                ))}
-              </div>
+              <VideoPlaylist categoryName={category.name} videos={category.videos} />
             </section>
           ))}
         </div>

@@ -7,6 +7,7 @@ import { PageContent } from '@/components/PageContent'
 import amnestyLogo from '@/logos/Amnesty-International-Logo-Vector.svg--3890860117.png'
 import caribouLogo from '@/logos/Caribou_Logo_Primary_Black.png'
 import hekayyatnaLogo from '@/logos/Hekayyatna English Eye.png'
+import ldnChapterLogo from '@/logos/LDN_BrandAssets_ChapterLogo-1588197619.png'
 import striveLogo from '@/logos/strive-2542923558.png'
 
 const bebas = Bebas_Neue({
@@ -20,10 +21,11 @@ const workedWithLogos: { src: StaticImageData; alt: string }[] = [
   { src: caribouLogo, alt: 'Caribou' },
   { src: hekayyatnaLogo, alt: 'Hekayyatna' },
   { src: striveLogo, alt: 'Strive' },
+  { src: ldnChapterLogo, alt: 'Chapter' },
 ]
 
 function WorkedWithLogo({ logo, index }: { logo: (typeof workedWithLogos)[number]; index: number }) {
-  if (index === workedWithLogos.length - 1) {
+  if (logo.alt === 'Strive') {
     return (
       <Image
         src={logo.src}
