@@ -1,17 +1,10 @@
 'use client'
 
 import Image from 'next/image'
-import { Bebas_Neue } from 'next/font/google'
 import { PageLayout } from '@/components/PageLayout'
 import { PageContent } from '@/components/PageContent'
 import { WorkedWithSection } from '@/components/WorkedWithSection'
 import headshotPhoto from '@/headshot/headshot.png'
-
-const bebas = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-})
 
 export default function AboutPage() {
   return (
@@ -25,7 +18,7 @@ export default function AboutPage() {
         className="w-full lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)]"
       >
         <h2
-          className={`w-full text-fluid-2xl font-semibold mb-6 sm:mb-8 tracking-tight text-white text-center ${bebas.className}`}
+          className="w-full text-fluid-2xl font-semibold mb-6 sm:mb-8 tracking-tight text-white text-center"
         >
           About
         </h2>

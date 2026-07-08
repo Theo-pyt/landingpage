@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ['var(--font-keshiva)', 'sans-serif'],
+  		},
   		fontSize: {
   			'fluid-sm': ['clamp(0.875rem, 0.8rem + 0.25vw, 1rem)', { lineHeight: '1.5' }],
   			'fluid-base': ['clamp(1rem, 0.9rem + 0.5vw, 1.125rem)', { lineHeight: '1.6' }],
@@ -17,7 +20,7 @@ const config: Config = {
   			'fluid-title': ['clamp(2rem, 1.5rem + 2.5vw, 3.5rem)', { lineHeight: '1.2' }],
   			'fluid-heading': ['clamp(1.375rem, 1.1rem + 1vw, 2rem)', { lineHeight: '1.3' }],
   			'fluid-2xl': ['clamp(2rem, 1.5rem + 2.5vw, 3rem)', { lineHeight: '1.2' }],
-  			'fluid-hero': ['clamp(2.5rem, 2rem + 4vw, 4rem)', { lineHeight: '1.1' }],
+  			'fluid-hero': ['clamp(2.35rem, 1.9rem + 3.75vw, 3.75rem)', { lineHeight: '1.1' }],
   			'fluid-display': ['clamp(1.75rem, 1.25rem + 2.5vw, 2.4rem)', { lineHeight: '1.05' }],
   		},
   		spacing: {

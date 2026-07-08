@@ -1,13 +1,6 @@
 'use client'
 
-import { Bebas_Neue } from 'next/font/google'
 import { Sidebar } from '@/components/Sidebar'
-
-const bebas = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-})
 
 type ActivePage = 'home' | 'about' | 'video' | 'contact'
 
@@ -32,7 +25,7 @@ export function PageLayout({
     <div
       className={`min-h-screen min-h-[100dvh] ${layoutClassName} ${
         isLight ? 'text-neutral-900' : 'text-white'
-      } ${bebas.className}`}
+      }`}
     >
       <Sidebar active={active} variant={sidebarVariant} />
       <main

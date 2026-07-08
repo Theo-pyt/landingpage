@@ -2,13 +2,6 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Bebas_Neue } from 'next/font/google'
-
-const bebas = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-})
 
 type ActivePage = 'home' | 'about' | 'video' | 'contact'
 
@@ -57,24 +50,24 @@ export function Sidebar({ active, variant = 'dark' }: SidebarProps) {
             </div>
             <div className="space-y-1">
               <p
-                className={`text-[0.65rem] sm:text-xs tracking-[0.3em] uppercase ${
+                className={`text-[0.65rem] sm:text-xs tracking-[0.3em] ${
                   isLight ? 'text-neutral-500' : 'text-neutral-400'
                 }`}
               >
                 Portfolio of
               </p>
               <h1
-                className={`text-fluid-display font-extrabold tracking-[0.12em] ${bebas.className}`}
+                className="text-fluid-display font-extrabold tracking-[0.12em]"
               >
-                THEODOR
+                Theodor
                 <br />
-                PINTILIE
+                Pintilie
               </h1>
             </div>
           </div>
         </Link>
 
-        <nav className="flex flex-row flex-wrap gap-x-6 gap-y-2 sm:gap-x-8 lg:flex-col lg:space-y-4 text-lg sm:text-xl lg:text-2xl tracking-[0.25em] uppercase">
+        <nav className="flex flex-row flex-wrap gap-x-6 gap-y-2 sm:gap-x-8 lg:flex-col lg:space-y-4 text-lg sm:text-xl lg:text-2xl tracking-[0.25em]">
           <Link href="/about" className={navLink('about')}>
             About
           </Link>
@@ -87,7 +80,7 @@ export function Sidebar({ active, variant = 'dark' }: SidebarProps) {
       <div className="w-full sm:max-w-xs lg:max-w-none">
         <Link href="/contact">
           <Button
-            className={`w-full rounded-none text-xs tracking-[0.25em] uppercase py-3 sm:py-4 ${
+            className={`w-full rounded-none text-xs tracking-[0.25em] font-bold py-3 sm:py-4 ${
               active === 'contact'
                 ? 'bg-red-600 ring-2 ring-red-400'
                 : 'bg-red-500 hover:bg-red-600'

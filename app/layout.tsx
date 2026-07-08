@@ -1,12 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Bebas_Neue } from "next/font/google";
+import { keshiva } from "@/lib/fonts";
 import "./globals.css";
-
-const bebas = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Theo.video",
@@ -53,14 +47,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${keshiva.variable}`}>
       <head>
         <link rel="icon" type="image/png" sizes="32x32" href="/images/idevibelogo.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/idevibelogo.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/idevibelogo.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${bebas.className} bg-black bg-dotted-grid`}>{children}</body>
+      <body className={`${keshiva.className} font-sans bg-black bg-dotted-grid`}>{children}</body>
     </html>
   );
 }

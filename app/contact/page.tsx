@@ -1,11 +1,4 @@
-import { Bebas_Neue } from 'next/font/google'
 import { PageLayout } from '@/components/PageLayout'
-
-const bebas = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-})
 
 export default function ContactPage() {
   return (
@@ -16,7 +9,7 @@ export default function ContactPage() {
     >
       <div className="text-center px-section-x sm:px-8 max-w-prose">
         <h2
-          className={`text-fluid-2xl font-semibold mb-6 sm:mb-8 tracking-tight text-neutral-900 ${bebas.className}`}
+          className="text-fluid-2xl font-semibold mb-6 sm:mb-8 tracking-tight text-neutral-900"
         >
           Get in touch
         </h2>

@@ -3,14 +3,8 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
-import { Bebas_Neue } from 'next/font/google'
 import { PageLayout } from '@/components/PageLayout'
-
-const bebas = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-})
+import { bebas } from '@/lib/fonts'
 
 function HeroRedDots() {
   return (
@@ -27,7 +21,7 @@ function HeroRedDots() {
 
 function HeroOrnament() {
   return (
-    <span className="inline-flex items-center gap-[0.12em] shrink-0">
+    <span className={`inline-flex items-center gap-[0.12em] shrink-0 text-fluid-hero ${bebas.className}`}>
       <span className="inline-flex items-center gap-[0.04em]">
         <span className="text-red-500 leading-none">|</span>
         <HeroRedDots />
@@ -127,14 +121,18 @@ export default function Page() {
         <section className="hero-bg min-h-[70vh] sm:min-h-[80vh] lg:min-h-screen flex items-center justify-center w-full">
           <div className="hero-content w-full max-w-2xl mx-auto px-section-x sm:px-8 flex flex-col items-center text-center lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)]">
             <div className="flex justify-center mb-3 sm:mb-4">
-              <div
-                className={`inline-grid grid-cols-[1fr_auto] items-center gap-x-3 text-fluid-hero font-semibold tracking-tight ${bebas.className}`}
-              >
-                <span className="text-neutral-100 text-right">Video Producer</span>
+              <div className="inline-grid grid-cols-[1fr_auto] items-center gap-x-3 tracking-tight">
+                <span className="text-neutral-100 text-right text-fluid-hero font-semibold [font-family:var(--font-keshiva),sans-serif]">
+                  Video Producer
+                </span>
                 <HeroOrnament />
-                <span className="text-neutral-100 text-right">Videographer</span>
+                <span className="text-neutral-100 text-right text-fluid-hero font-semibold [font-family:var(--font-keshiva),sans-serif]">
+                  Videographer
+                </span>
                 <HeroOrnament />
-                <span className="text-neutral-100 text-right">Video Editor</span>
+                <span className="text-neutral-100 text-right text-fluid-hero font-semibold [font-family:var(--font-keshiva),sans-serif]">
+                  Video Editor
+                </span>
                 <HeroOrnament />
               </div>
             </div>
@@ -144,7 +142,7 @@ export default function Page() {
             </p>
 
             <Link href="/video/" className="inline-flex justify-center">
-              <Button className="rounded-none bg-transparent border border-red-500 text-red-400 hover:bg-red-500 hover:text-white text-xs tracking-[0.25em] uppercase px-6 sm:px-8 py-4 sm:py-5">
+              <Button className="rounded-none bg-transparent border border-red-500 text-red-400 hover:bg-red-500 hover:text-white text-xs tracking-[0.25em] uppercase font-bold px-6 sm:px-8 py-4 sm:py-5">
                 Portfolio
               </Button>
             </Link>
@@ -157,7 +155,7 @@ export default function Page() {
             <div className="max-w-prose w-full">
               <Link
                 href="/video"
-                className={`block text-fluid-xl leading-relaxed text-neutral-900 hover:text-red-600 transition-colors cursor-pointer ${bebas.className}`}
+                className="block text-[clamp(1.3rem,1.1rem+1.1vw,1.65rem)] leading-relaxed text-neutral-900 hover:text-red-600 transition-colors cursor-pointer"
               >
                 From hero videos to corporate interviews check out some of the engaging content
                 I&apos;ve created throughout the years.
@@ -170,13 +168,13 @@ export default function Page() {
         <section className="bg-deep-blue text-white flex justify-center w-full">
           <div className="w-full max-w-content mx-auto py-section-y px-section-x sm:px-8 flex flex-col items-center text-center lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)]">
             <h3
-              className={`text-fluid-2xl font-semibold mb-8 sm:mb-10 tracking-tight ${bebas.className}`}
+              className="text-fluid-2xl font-semibold mb-8 sm:mb-10 tracking-tight"
             >
               Get moving. Get creative.
             </h3>
 
             <Link href="/contact" className="inline-flex justify-center mb-12">
-              <Button className="rounded-none bg-red-500 hover:bg-red-600 text-xs tracking-[0.25em] uppercase px-8 sm:px-10 py-3 sm:py-4">
+              <Button className="rounded-none bg-red-500 hover:bg-red-600 text-xs tracking-[0.25em] uppercase font-bold px-8 sm:px-10 py-3 sm:py-4">
                 Contact
               </Button>
             </Link>

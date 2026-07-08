@@ -1,16 +1,9 @@
 'use client'
 
-import { Bebas_Neue } from 'next/font/google'
 import { PageLayout } from '@/components/PageLayout'
 import { PageContent } from '@/components/PageContent'
 import { WorkedWithSection } from '@/components/WorkedWithSection'
 import { VideoPlaylist, type PlaylistVideo } from '@/components/VideoPlaylist'
-
-const bebas = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-})
 
 type Video = PlaylistVideo
 
@@ -109,7 +102,7 @@ export default function VideoPage() {
       >
         <header className="w-full mb-8 sm:mb-10 text-center">
           <h2
-            className={`text-fluid-title font-semibold mb-3 sm:mb-4 tracking-tight ${bebas.className}`}
+            className="text-fluid-title font-semibold mb-3 sm:mb-4 tracking-tight"
           >
             Portfolio
           </h2>
@@ -122,7 +115,7 @@ export default function VideoPage() {
           {categories.map((category) => (
             <section key={category.name} className="w-full space-y-6 sm:space-y-8">
               <h3
-                className={`text-fluid-heading font-semibold tracking-tight text-center ${bebas.className}`}
+                className="text-fluid-heading font-semibold tracking-tight text-center"
               >
                 {category.name}
               </h3>

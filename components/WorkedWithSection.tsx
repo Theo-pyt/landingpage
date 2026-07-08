@@ -2,19 +2,12 @@
 
 import { useEffect, useRef } from 'react'
 import Image, { type StaticImageData } from 'next/image'
-import { Bebas_Neue } from 'next/font/google'
 import { PageContent } from '@/components/PageContent'
 import amnestyLogo from '@/logos/Amnesty-International-Logo-Vector.svg--3890860117.png'
 import caribouLogo from '@/logos/Caribou_Logo_Primary_Black.png'
 import hekayyatnaLogo from '@/logos/Hekayyatna English Eye.png'
 import ldnChapterLogo from '@/logos/LDN_BrandAssets_ChapterLogo-1588197619.png'
 import striveLogo from '@/logos/strive-2542923558.png'
-
-const bebas = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-})
 
 const workedWithLogos: { src: StaticImageData; alt: string }[] = [
   { src: amnestyLogo, alt: 'Amnesty International' },
@@ -77,7 +70,7 @@ export function WorkedWithSection() {
         className="w-full lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)] pb-4 sm:pb-6"
       >
         <h2
-          className={`w-full text-fluid-2xl font-semibold tracking-tight text-neutral-900 text-center ${bebas.className}`}
+          className="w-full text-fluid-2xl font-semibold tracking-tight text-neutral-900 text-center"
         >
           I have worked with
         </h2>
