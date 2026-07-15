@@ -17,11 +17,11 @@ export default function AboutPage() {
         narrow
         className="w-full lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)]"
       >
-        <h2
+        <h1
           className="w-full text-fluid-2xl font-semibold mb-6 sm:mb-8 tracking-tight text-white text-center"
         >
-          About
-        </h2>
+          Freelance Videographer &amp; Remote Video Editor
+        </h1>
 
         <div className="w-full space-y-4 sm:space-y-5 text-neutral-200 leading-relaxed text-fluid-base text-left">
           <div className="float-left w-[min(100%,clamp(11.2rem,36vw,16rem))] mr-4 sm:mr-6 md:mr-8 mb-2">
@@ -45,18 +45,21 @@ export default function AboutPage() {
             influences the way I approach storytelling.
           </p>
           <p>
-            I&apos;m a videographer and editor creating story-driven content that connects brands with
-            audiences across social, digital, and live platforms. I manage the entire production
-            process, from concept development and pre-production planning to filming, editing, colour
-            grading, and final delivery. My work spans corporate films, promotional content, and
-            narrative-led edits, with a focus on clear messaging, thoughtful storytelling, and polished
-            execution.
+            I&apos;m a freelance videographer and remote video editor creating story-driven content
+            that connects brands with audiences across social, digital, and live platforms. I manage
+            end-to-end video production — from concept development and pre-production planning to
+            filming, editing, colour grading, motion graphics, subtitling, and final delivery. My work
+            spans corporate video, brand films, promotional and marketing videos, testimonial and
+            interview content, event videography, and documentary-style edits, with a focus on clear
+            messaging, thoughtful storytelling, and polished execution.
           </p>
           <p>
-            Throughout my career, I&apos;ve collaborated with brands, businesses, and creative teams to
-            produce content that is not only visually compelling but purposeful in its communication.
-            Many of these projects have been delivered remotely, working closely with teams and clients
-            across different locations and time zones.
+            Throughout my career, I&apos;ve collaborated with brands, agencies, startups, NGOs, and
+            creative teams across FinTech, B2B, corporate communications, and employer branding to
+            produce content that is visually compelling and purposeful. Many projects are delivered
+            through remote video production — working closely with international clients across
+            Europe and worldwide as a Romania-based, EU freelance videographer available for
+            project-based and contract engagements.
           </p>
           <p>
             A significant part of that journey has been my ongoing partnership with Hekayyatna, where

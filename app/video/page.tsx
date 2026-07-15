@@ -101,13 +101,14 @@ export default function VideoPage() {
         className="!max-w-video py-10 sm:py-12 md:py-section-y flex flex-col items-center lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)]"
       >
         <header className="w-full mb-8 sm:mb-10 text-center">
-          <h2
+          <h1
             className="text-fluid-title font-semibold mb-3 sm:mb-4 tracking-tight"
           >
-            Portfolio
-          </h2>
+            Video Production Portfolio
+          </h1>
           <p className="text-fluid-lg text-neutral-400 max-w-[min(100%,48rem)] mx-auto">
-            Over time, I have worked on:
+            Corporate video, brand films, promotional videos, testimonials, and documentary-style
+            work — freelance videography and remote video editing across commercial and B2B projects.
           </p>
         </header>
 

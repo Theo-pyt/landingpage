@@ -120,6 +120,11 @@ export default function Page() {
         {/* Hero — offset on lg so copy sits at viewport center, not main-column center */}
         <section className="hero-bg min-h-[70vh] sm:min-h-[80vh] lg:min-h-screen flex items-center justify-center w-full">
           <div className="hero-content w-full max-w-2xl mx-auto px-section-x sm:px-8 flex flex-col items-center text-center lg:-translate-x-[calc(clamp(12rem,18vw,16rem)/2)]">
+            <h1 className="sr-only">
+              Freelance Videographer &amp; Remote Video Editor — Corporate, Brand &amp; Commercial
+              Video Production
+            </h1>
+
             <div className="flex justify-center mb-3 sm:mb-4">
               <div className="inline-grid grid-cols-[1fr_auto] items-center gap-x-3 tracking-tight">
                 <span className="text-neutral-100 text-right text-fluid-hero font-semibold [font-family:var(--font-keshiva),sans-serif]">
